@@ -576,7 +576,11 @@ require('lazy').setup({
           -- root_dir = root_pattern('go.work', 'go.mod', '.git'),
           single_file_support = true,
         },
-
+        zls = {
+          cmd = { 'zls' },
+          filetypes = { 'zig', 'zir' },
+          single_file_support = true,
+        },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
