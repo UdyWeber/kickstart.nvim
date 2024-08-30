@@ -564,7 +564,15 @@ require('lazy').setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      local util = require 'lspconfig.util'
       local servers = {
+        -- Elixir LSP
+        nextls = {
+          cmd = { 'nextls', '--stdio' },
+          filetypes = { 'elixir', 'eelixir', 'heex', 'surface' },
+          single_file_support = true,
+        },
+        -- C LSP
         clangd = {
           cmd = { 'clangd' },
           filetypes = { 'c', 'cpp', 'cuda', 'proto' },
@@ -573,15 +581,38 @@ require('lazy').setup({
         gopls = {
           cmd = { 'gopls' },
           filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
-          -- root_dir = root_pattern('go.work', 'go.mod', '.git'),
+          root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
           single_file_support = true,
+          settings = {
+            gopls = {
+              completeUnimported = true,
+              usePlaceholders = true,
+              analysis = {
+                unusedparams = true,
+              },
+            },
+          },
         },
+        -- Zig LSP
         zls = {
           cmd = { 'zls' },
           filetypes = { 'zig', 'zir' },
           single_file_support = true,
         },
-        -- pyright = {},
+        pyright = {
+          cmd = { 'pyright-langserver', '--stdio' },
+          filetypes = { 'python' },
+          settings = {
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                diagonsitcMode = 'openFilesOnly',
+                useLibraryCodeForTypes = true,
+              },
+            },
+          },
+          single_file_support = true,
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -667,7 +698,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'isort', 'black' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
@@ -849,7 +880,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'cpp', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
