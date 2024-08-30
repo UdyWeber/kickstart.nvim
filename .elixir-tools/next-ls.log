@@ -1,0 +1,308 @@
+
+13:44:32.064 [info] Loading 137 CA(s) from :otp store
+
+13:44:32.450 id=1 [debug] handled request client -> server initialize in 109ms
+
+13:44:32.478 [debug] sent notification server -> client window/logMessage
+
+13:44:32.481 [debug] NextLS v0.23.2 has initialized!
+
+13:44:32.481 [debug] sent notification server -> client window/logMessage
+
+13:44:32.481 [debug] Log file located at /home/jaw/.config/nvim/.elixir-tools/next-ls.log
+
+13:44:32.483 [debug] sent notification server -> client window/logMessage
+
+13:44:32.483 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+13:44:32.714 [debug] sent notification server -> client window/logMessage
+
+13:44:32.714 [warning] Failed to unzip and install the bundled Elixir archive.
+
+** (MatchError) no match of right hand side value: {"{\"init terminating in do_boot\",{undef,[{elixir,start_cli,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}\r\n", 1}
+    (next_ls 0.23.2) lib/next_ls/runtime/bundled_elixir.ex:55: NextLS.Runtime.BundledElixir.install/2
+    (next_ls 0.23.2) lib/next_ls.ex:874: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /Users/runner/work/next-ls/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+
+13:44:32.714 [debug] sent notification server -> client window/logMessage
+
+13:44:32.714 [debug] Booting runtimes...
+
+13:44:32.717 id=3330 [debug] sent request server -> client window/workDoneProgress/create
+
+13:44:32.726 [debug] sent notification server -> client $/progress
+
+13:44:32.750 [debug] sent notification server -> client window/logMessage
+
+13:44:32.750 [info] Beginning DB migration...
+
+13:44:32.759 [debug] sent notification server -> client window/logMessage
+
+13:44:32.759 [info] Database is on the latest version: 7
+
+13:44:32.759 [debug] sent notification server -> client window/logMessage
+
+13:44:32.759 [info] Finished DB migration...
+
+13:44:32.760 [debug] sent notification server -> client window/logMessage
+
+13:44:32.760 [info] Booting runtime for abc.
+
+- elixir: /home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/bin/elixir
+- zombie wrapper script: /home/jaw/.local/share/.burrito/next_ls_erts-15.0_0.23.2/lib/next_ls-0.23.2/priv/cmd
+- working_dir: /home/jaw/abc
+- command: /home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/bin/elixir --no-halt --sname nextls-runtime-1725036272759873560 --cookie Z4ER2X2KFNZWMEC65F5SIBKLBWALO6AXJYUMIFNSO6GV3FRQKUZA==== -S mix loadpaths --no-compile
+
+Environment: 
+
+LSP=nextls
+NEXTLS_PARENT_PID=g1h3K25leHQtbHMtMTcyNTAzNjI3MjA4NjU0MjQyMEBERVNLVE9QLUxRN1ZBNTgAAADjAAAAAGbR9vE=
+MIX_ENV=dev
+MIX_TARGET=host
+MIX_BUILD_ROOT=.elixir-tools/_build
+ROOTDIR=false
+BINDIR=false
+RELEASE_ROOT=false
+RELEASE_SYS_CONFIG=false
+PATH=/home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/bin:/home/jaw/.local/share/.burrito/next_ls_erts-15.0_0.23.2/bin:/home/jaw/.local/share/nvim/mason/bin:/home/jaw/.local/share/nvim/mason/bin:/home/jaw/.local/bin:/home/jaw/.cargo/bin:/home/jaw/.nvm/versions/node/v20.14.0/bin:/home/jaw/.pyenv/plugins/pyenv-virtualenv/shims:/home/jaw/.pyenv/shims:/home/jaw/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Go/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/JAW/scoop/apps/mingw/current/bin:/mnt/c/Users/JAW/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/JAW/scoop/apps/nodejs-lts/current/bin:/mnt/c/Users/JAW/scoop/apps/nodejs-lts/current:/mnt/c/Users/JAW/scoop/apps/nodejs/current/bin:/mnt/c/Users/JAW/scoop/apps/nodejs/current:/mnt/c/Users/JAW/scoop/shims:/mnt/c/Users/JAW/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/JetBrains/WebStorm 2024.1.3/bin:/mnt/c/Program Files/JetBrains/GoLand 2024.1.2/bin:/mnt/c/Users/JAW/go/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2024.1.2/bin:/mnt/c/Program Files/JetBrains/CLion 2024.1.2/bin:/mnt/c/Program Files/JetBrains/PyCharm 2024.1.3/bin:/mnt/c/Program Files/JetBrains/RustRover 2024.1.2/bin:/mnt/c/Program Files/JetBrains/JetBrains Rider 2024.1.4/bin:/mnt/c/Users/JAW/Desktop/git_repos/Madfolders/bin:/snap/bin:/usr/local/bin/migrate:/home/jaw/.local/share/pypoetry/venv/bin/poetry:/usr/local/go/bin:/home/jaw/go/bin:/usr/local/zig
+MIX_HOME=/home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/.mix
+MIX_ARCHIVES=/home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/.mix/archives
+
+
+13:44:32.760 [debug] handled notification client -> server initialized in 285ms
+
+13:44:32.765 [debug] handled notification client -> server textDocument/didOpen in 4ms
+
+13:44:32.864 [debug] sent notification server -> client window/logMessage
+
+13:44:32.864 [info] {"init terminating in do_boot",{undef,[{elixir,start_cli,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]
+
+13:44:32.864 [debug] sent notification server -> client window/logMessage
+
+13:44:32.864 [info] }]}}
+init terminating in do_boot ({undef,[{elixir,start_cli,[]
+
+13:44:32.864 [debug] sent notification server -> client window/logMessage
+
+13:44:32.864 [info] ,[]},{init,start_em,1
+
+13:44:32.864 [debug] sent notification server -> client window/logMessage
+
+13:44:32.864 [info] ,[]},{init,do_boot,3,[]}]})
+
+
+13:44:32.864 [debug] sent notification server -> client window/logMessage
+
+13:44:32.864 [info] 
+Crash dump is being written to: erl_crash.dump...
+
+13:44:32.976 [debug] sent notification server -> client window/logMessage
+
+13:44:32.976 [info] done
+
+
+13:44:32.979 [debug] sent notification server -> client $/progress
+
+13:44:32.980 [debug] sent notification server -> client window/logMessage
+
+13:44:32.980 [error] Runtime for folder abc failed to initialize
+
+13:44:32.982 [debug] sent notification server -> client window/logMessage
+
+13:44:32.982 [info] The runtime for abc has successfully shut down.
+
+13:45:04.248 [debug] handled notification client -> server textDocument/didChange in 5ms
+
+13:45:05.261 [debug] sent notification server -> client window/logMessage
+
+13:45:05.261 [warning] Failed to run completion request: ** (MatchError) no match of right hand side value: :timeout
+    (next_ls 0.23.2) lib/next_ls.ex:631: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /Users/runner/work/next-ls/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+13:45:05.278 id=2 [debug] handled request client -> server textDocument/completion in 1030ms
+
+13:45:05.279 [debug] handled notification client -> server textDocument/didChange in 139µs
+
+13:45:05.279 [debug] handled notification client -> server textDocument/didChange in 136µs
+
+13:45:05.280 [debug] handled notification client -> server $/cancelRequest in 1ms
+
+13:45:05.280 [debug] handled notification client -> server textDocument/didChange in 147µs
+
+13:45:06.282 [debug] sent notification server -> client window/logMessage
+
+13:45:06.282 id=3 [debug] handled request client -> server textDocument/completion in 1001ms
+
+13:45:06.282 [warning] Failed to run completion request: ** (MatchError) no match of right hand side value: :timeout
+    (next_ls 0.23.2) lib/next_ls.ex:631: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /Users/runner/work/next-ls/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+13:45:06.282 [debug] handled notification client -> server $/cancelRequest in 59µs
+
+13:45:06.282 [debug] handled notification client -> server textDocument/didChange in 145µs
+
+13:45:07.284 [debug] sent notification server -> client window/logMessage
+
+13:45:07.284 [warning] Failed to run completion request: ** (MatchError) no match of right hand side value: :timeout
+    (next_ls 0.23.2) lib/next_ls.ex:631: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /Users/runner/work/next-ls/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+13:45:07.284 id=4 [debug] handled request client -> server textDocument/completion in 1001ms
+
+13:45:07.284 [debug] handled notification client -> server $/cancelRequest in 51µs
+
+13:45:07.284 [debug] handled notification client -> server textDocument/didChange in 110µs
+
+13:45:08.287 [debug] sent notification server -> client window/logMessage
+
+13:45:08.287 [warning] Failed to run completion request: ** (MatchError) no match of right hand side value: :timeout
+    (next_ls 0.23.2) lib/next_ls.ex:631: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /Users/runner/work/next-ls/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+13:45:08.287 id=5 [debug] handled request client -> server textDocument/completion in 1002ms
+
+13:45:08.287 [debug] handled notification client -> server textDocument/didChange in 200µs
+
+13:45:08.287 [debug] handled notification client -> server $/cancelRequest in 52µs
+
+13:45:08.287 [debug] handled notification client -> server textDocument/didChange in 137µs
+
+13:45:11.011 [info] Loading 137 CA(s) from :otp store
+
+13:45:11.245 id=1 [debug] handled request client -> server initialize in 62ms
+
+13:45:11.651 [debug] sent notification server -> client window/logMessage
+
+13:45:11.656 [debug] NextLS v0.23.2 has initialized!
+
+13:45:11.656 [debug] sent notification server -> client window/logMessage
+
+13:45:11.656 [debug] Log file located at /home/jaw/.config/nvim/.elixir-tools/next-ls.log
+
+13:45:11.657 [debug] sent notification server -> client window/logMessage
+
+13:45:11.657 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+13:45:11.872 [debug] sent notification server -> client window/logMessage
+
+13:45:11.872 [warning] Failed to unzip and install the bundled Elixir archive.
+
+** (MatchError) no match of right hand side value: {"{\"init terminating in do_boot\",{undef,[{elixir,start_cli,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}\r\n", 1}
+    (next_ls 0.23.2) lib/next_ls/runtime/bundled_elixir.ex:55: NextLS.Runtime.BundledElixir.install/2
+    (next_ls 0.23.2) lib/next_ls.ex:874: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /Users/runner/work/next-ls/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+
+13:45:11.872 [debug] sent notification server -> client window/logMessage
+
+13:45:11.873 [debug] Booting runtimes...
+
+13:45:11.875 id=66 [debug] sent request server -> client window/workDoneProgress/create
+
+13:45:11.878 [debug] sent notification server -> client $/progress
+
+13:45:11.885 [debug] sent notification server -> client window/logMessage
+
+13:45:11.885 [info] Beginning DB migration...
+
+13:45:11.891 [debug] sent notification server -> client window/logMessage
+
+13:45:11.891 [info] Database is on the latest version: 7
+
+13:45:11.891 [debug] sent notification server -> client window/logMessage
+
+13:45:11.891 [info] Finished DB migration...
+
+13:45:11.891 [debug] sent notification server -> client window/logMessage
+
+13:45:11.891 [info] Booting runtime for abc.
+
+- elixir: /home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/bin/elixir
+- zombie wrapper script: /home/jaw/.local/share/.burrito/next_ls_erts-15.0_0.23.2/lib/next_ls-0.23.2/priv/cmd
+- working_dir: /home/jaw/abc
+- command: /home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/bin/elixir --no-halt --sname nextls-runtime-1725036311891269038 --cookie Z4ER2X2KFNZWMEC65F5SIBKLBWALO6AXJYUMIFNSO6GV3FRQKUZA==== -S mix loadpaths --no-compile
+
+Environment: 
+
+LSP=nextls
+NEXTLS_PARENT_PID=g1h3K25leHQtbHMtMTcyNTAzNjMxMTAxNzg4NjMwNUBERVNLVE9QLUxRN1ZBNTgAAADjAAAAAGbR9xg=
+MIX_ENV=dev
+MIX_TARGET=host
+MIX_BUILD_ROOT=.elixir-tools/_build
+ROOTDIR=false
+BINDIR=false
+RELEASE_ROOT=false
+RELEASE_SYS_CONFIG=false
+PATH=/home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/bin:/home/jaw/.local/share/.burrito/next_ls_erts-15.0_0.23.2/bin:/home/jaw/.local/share/nvim/mason/bin:/home/jaw/.local/share/nvim/mason/bin:/home/jaw/.local/bin:/home/jaw/.cargo/bin:/home/jaw/.nvm/versions/node/v20.14.0/bin:/home/jaw/.pyenv/plugins/pyenv-virtualenv/shims:/home/jaw/.pyenv/shims:/home/jaw/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Go/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/JAW/scoop/apps/mingw/current/bin:/mnt/c/Users/JAW/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/JAW/scoop/apps/nodejs-lts/current/bin:/mnt/c/Users/JAW/scoop/apps/nodejs-lts/current:/mnt/c/Users/JAW/scoop/apps/nodejs/current/bin:/mnt/c/Users/JAW/scoop/apps/nodejs/current:/mnt/c/Users/JAW/scoop/shims:/mnt/c/Users/JAW/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/JetBrains/WebStorm 2024.1.3/bin:/mnt/c/Program Files/JetBrains/GoLand 2024.1.2/bin:/mnt/c/Users/JAW/go/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2024.1.2/bin:/mnt/c/Program Files/JetBrains/CLion 2024.1.2/bin:/mnt/c/Program Files/JetBrains/PyCharm 2024.1.3/bin:/mnt/c/Program Files/JetBrains/RustRover 2024.1.2/bin:/mnt/c/Program Files/JetBrains/JetBrains Rider 2024.1.4/bin:/mnt/c/Users/JAW/Desktop/git_repos/Madfolders/bin:/snap/bin:/usr/local/bin/migrate:/home/jaw/.local/share/pypoetry/venv/bin/poetry:/usr/local/go/bin:/home/jaw/go/bin:/usr/local/zig
+MIX_HOME=/home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/.mix
+MIX_ARCHIVES=/home/jaw/.cache/elixir-tools/nextls/elixir/1-17-1/.mix/archives
+
+
+13:45:11.892 [debug] handled notification client -> server initialized in 243ms
+
+13:45:11.894 [debug] handled notification client -> server textDocument/didOpen in 2ms
+
+13:45:11.990 [debug] sent notification server -> client window/logMessage
+
+13:45:11.991 [info] {"init terminating in do_boot",{undef,[{elixir,start_cli,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}
+
+13:45:11.991 [debug] sent notification server -> client window/logMessage
+
+13:45:11.991 [info] 
+init terminating in do_boot ({undef,[{elixir,start_cli,[],[]}
+
+13:45:11.991 [debug] sent notification server -> client window/logMessage
+
+13:45:11.991 [info] ,{init,start_em,1,[]},{init,do_boot,3,[]}]})
+
+Crash dump is being writ
+
+13:45:11.991 [debug] sent notification server -> client window/logMessage
+
+13:45:11.991 [info] ten to: erl_crash.dump...
+
+13:45:12.101 [debug] sent notification server -> client window/logMessage
+
+13:45:12.102 [info] done
+
+
+13:45:12.106 [debug] sent notification server -> client $/progress
+
+13:45:12.107 [debug] sent notification server -> client window/logMessage
+
+13:45:12.108 [error] Runtime for folder abc failed to initialize
+
+13:45:12.109 [debug] sent notification server -> client window/logMessage
+
+13:45:12.109 [info] The runtime for abc has successfully shut down.
