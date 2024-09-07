@@ -565,54 +565,15 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local util = require 'lspconfig.util'
+      local lsps = require 'custom.lsps'
       local servers = {
-        -- Elixir LSP
-        nextls = {
-          cmd = { 'nextls', '--stdio' },
-          filetypes = { 'elixir', 'eelixir', 'heex', 'surface' },
-          single_file_support = true,
-        },
+        elixirls = lsps.elixirls_config,
         -- C LSP
-        clangd = {
-          cmd = { 'clangd' },
-          filetypes = { 'c', 'cpp', 'cuda', 'proto' },
-          single_file_support = true,
-        },
-        gopls = {
-          cmd = { 'gopls' },
-          filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
-          root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
-          single_file_support = true,
-          settings = {
-            gopls = {
-              completeUnimported = true,
-              usePlaceholders = true,
-              analysis = {
-                unusedparams = true,
-              },
-            },
-          },
-        },
+        clangd = lsps.clangdeez_nuts_config,
+        gopls = lsps.gopls_config,
         -- Zig LSP
-        zls = {
-          cmd = { 'zls' },
-          filetypes = { 'zig', 'zir' },
-          single_file_support = true,
-        },
-        pyright = {
-          cmd = { 'pyright-langserver', '--stdio' },
-          filetypes = { 'python' },
-          settings = {
-            python = {
-              analysis = {
-                autoSearchPaths = true,
-                diagonsitcMode = 'openFilesOnly',
-                useLibraryCodeForTypes = true,
-              },
-            },
-          },
-          single_file_support = true,
-        },
+        zls = lsps.zls_config,
+        pyright = lsps.pyright_config,
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
