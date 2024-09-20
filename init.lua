@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -189,6 +189,15 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+function OpenTerminal()
+  vim.cmd 'split | terminal zsh'
+  vim.cmd 'resize 12'
+  vim.cmd 'startinsert'
+end
+
+-- Jaw Keymaps
+vim.keymap.set('n', 'tt', OpenTerminal, { desc = 'Opens terminal on new window at the bottom' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -564,7 +573,6 @@ require('lazy').setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      local util = require 'lspconfig.util'
       local lsps = require 'custom.lsps'
       local servers = {
         elixirls = lsps.elixirls_config,
@@ -574,6 +582,11 @@ require('lazy').setup({
         -- Zig LSP
         zls = lsps.zls_config,
         pyright = lsps.pyright_config,
+
+        -- Frontend Shit
+        emmet_language_server = lsps.emmet_config,
+        tailwindcss = lsps.tailwind_css_config,
+        html = lsps.vscode_html_config,
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
