@@ -37,4 +37,6 @@ return {
     end,
     ft = { 'markdown' },
   },
+  { 'mrcjkb/rustaceanvim' },
+  { 'ThePrimeagen/vim-be-good' },
 }
