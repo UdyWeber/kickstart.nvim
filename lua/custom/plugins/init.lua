@@ -16,6 +16,16 @@ return {
         opts.ensure_installed = opts.ensure_installed or {}
         table.insert(opts.ensure_installed, 'http')
       end,
-    },
+  }
   },
+  {
+    'NvChad/nvim-colorizer.lua',
+    opts = {
+      user_default_options = {
+        tailwind = true,
+      },
+    },
+   },
+  { 'mrcjkb/rustaceanvim' },
+  { 'ThePrimeagen/vim-be-good' },
 }

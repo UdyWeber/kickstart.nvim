@@ -37,33 +37,15 @@ return {
     filetypes = { 'zig', 'zir' },
     single_file_support = true,
   },
-  pyright_config = {
-    cmd = { 'pyright-langserver', '--stdio' },
-    filetypes = { 'python' },
-    settings = {
-      python = {
-        analysis = {
-          autoSearchPaths = true,
-          diagonsitcMode = 'openFilesOnly',
-          useLibraryCodeForTypes = true,
-        },
-      },
-    },
-    single_file_support = true,
-  },
+  pyright_config = {},
   emmet_config = {},
   tailwind_css_config = {},
   vscode_html_config = {},
-  cds_lsp = {
-    cmd = {
-      -- Since we installed cds-lsp globally, we can refer to it using this command
-      vim.fn.expand 'cds-lsp',
-      -- And then remembering to kindly ask it to be ready for some sweet stdio communication
-      '--stdio',
-    },
-    -- Also remember to tell it which files it actually works with!
-    filetypes = { 'cds' },
-    root_dir = util.root_pattern('.git', 'package.json'),
-    settings = {},
-  },
+  ruff_config = {},
+  emmet_config = {},
+  tailwind_css_config = {},
+  js_ts_config = {},
+  eslint_config = {},
+  vscode_html_config = {},
+  rust_analyzer_config = {},
 }

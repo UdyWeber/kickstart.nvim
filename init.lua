@@ -11,7 +11,7 @@
 ========         ||                    ||   | === |          ========
 ========         ||                    ||   |-----|          ========
 ========         ||:Tutor              ||   |:::::|          ========
-========         |'-..................-'|   |____o|          ========
+========         |'-..................-'|   |___|          ========
 ========         `"")----------------(""`   ___________      ========
 ========        /::::::::::|  |::::::::::\  \ no mouse \     ========
 ========       /:::========|  |==hjkl==:::\  \ required \    ========
@@ -102,7 +102,7 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -196,9 +196,15 @@ function OpenTerminal()
   vim.cmd 'startinsert'
 end
 
+function OpenFilePreview()
+  vim.cmd ':Ex'
+end
+
 -- Jaw Keymaps
 vim.keymap.set('n', 'tt', OpenTerminal, { desc = 'Opens terminal on new window at the bottom' })
 vim.keymap.set('n', 'tx', ':Rest run', { desc = 'Run rest client in current buffer' })
+vim.keymap.set('n', '<leader>pv', OpenFilePreview, { desc = 'Opens file preview' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -576,17 +582,32 @@ require('lazy').setup({
       local lsps = require 'custom.lsps'
       local servers = {
         elixirls = lsps.elixirls_config,
-        -- C LSP
+
+        -- C
         clangd = lsps.clangdeez_nuts_config,
+
+        -- Golang
         gopls = lsps.gopls_config,
-        -- Zig LSP
+
+        -- Rust
+        rust_analyzer = lsps.rust_analyzer_config,
+        -- Zig
         zls = lsps.zls_config,
+
+        -- Python
         pyright = lsps.pyright_config,
+        pylsp = {},
+        mypy = {},
+        black = {},
+        ruff = lsps.ruff_config,
 
         -- Frontend Shit
         emmet_language_server = lsps.emmet_config,
         tailwindcss = lsps.tailwind_css_config,
         html = lsps.vscode_html_config,
+        ts_ls = lsps.js_ts_config,
+        eslint = lsps.eslint_config,
+
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -685,6 +706,7 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
+      { 'roobert/tailwindcss-colorizer-cmp.nvim', config = true },
       -- Snippet Engine & its associated nvim-cmp source
       {
         'L3MON4D3/LuaSnip',
@@ -717,6 +739,11 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
     },
+    opts = function(_, opts)
+      opts.formatting = {
+        format = require('tailwindcss-colorizer-cmp').formatter,
+      }
+    end,
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
@@ -729,7 +756,6 @@ require('lazy').setup({
           { name = 'buffer' },
         },
       })
-
       cmp.setup {
         snippet = {
           expand = function(args)
