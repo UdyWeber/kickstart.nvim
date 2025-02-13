@@ -16,6 +16,7 @@
 ========        /::::::::::|  |::::::::::\  \ no mouse \     ========
 ========       /:::========|  |==hjkl==:::\  \ required \    ========
 ========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
+=====================================================================
 ========                                                     ========
 =====================================================================
 =====================================================================
@@ -196,14 +197,9 @@ function OpenTerminal()
   vim.cmd 'startinsert'
 end
 
-function OpenFilePreview()
-  vim.cmd ':Ex'
-end
-
 -- Jaw Keymaps
 vim.keymap.set('n', 'tt', OpenTerminal, { desc = 'Opens terminal on new window at the bottom' })
 vim.keymap.set('n', 'tx', ':Rest run', { desc = 'Run rest client in current buffer' })
-vim.keymap.set('n', '<leader>pv', OpenFilePreview, { desc = 'Opens file preview' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
