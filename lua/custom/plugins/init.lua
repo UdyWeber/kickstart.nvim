@@ -12,11 +12,13 @@ return {
     'rest-nvim/rest.nvim',
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
+      'j-hui/fidget.nvim',
+      'nvim-neotest/nvim-nio',
       opts = function(_, opts)
         opts.ensure_installed = opts.ensure_installed or {}
         table.insert(opts.ensure_installed, 'http')
       end,
-  }
+    },
   },
   {
     'NvChad/nvim-colorizer.lua',
@@ -25,7 +27,7 @@ return {
         tailwind = true,
       },
     },
-   },
+  },
   { 'mrcjkb/rustaceanvim' },
   { 'ThePrimeagen/vim-be-good' },
   {
