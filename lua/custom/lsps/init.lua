@@ -51,60 +51,19 @@ return {
     },
     single_file_support = true,
   },
-  emmet_config = {
-    cmd = { 'emmet-language-server', '--stdio' },
-    filetypes = { 'css', 'html' },
-    single_file_support = true,
-  },
-  tailwind_css_config = {
-    cmd = { 'tailwindcss-language-server', '--stdio' },
-    filetypes = {
-      -- 'eelixir',
-      -- 'elixir',
-      'gohtml',
-      'gohtmltmpl',
-      'html-eex',
-      'heex',
-      'markdown',
-      'css',
-      'sass',
-      'scss',
-      'javascript',
-      'templ',
-      'html',
+  emmet_config = {},
+  tailwind_css_config = {},
+  vscode_html_config = {},
+  cds_lsp = {
+    cmd = {
+      -- Since we installed cds-lsp globally, we can refer to it using this command
+      vim.fn.expand 'cds-lsp',
+      -- And then remembering to kindly ask it to be ready for some sweet stdio communication
+      '--stdio',
     },
-    root_dir = util.root_pattern('tailwind.config.js', '.git', 'package.json', 'tailwind.config.ts'),
-    settings = {
-      tailwindCSS = {
-        classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
-        includeLanguages = {
-          eelixir = 'html-eex',
-          templ = 'html',
-        },
-        lint = {
-          cssConflict = 'warning',
-          invalidApply = 'error',
-          invalidConfigPath = 'error',
-          invalidScreen = 'error',
-          invalidTailwindDirective = 'error',
-          invalidVariant = 'error',
-          recommendedVariantOrder = 'warning',
-        },
-        validate = true,
-      },
-    },
-  },
-  vscode_html_config = {
-    cmd = { 'vscode-html-language-server', '--stdio' },
-    filetypes = { 'html', 'templ' },
-    init_options = {
-      configurationSection = { 'html', 'css', 'javascript' },
-      embeddedLanguages = {
-        css = true,
-        javascript = true,
-      },
-      provideFormatter = true,
-    },
-    single_file_support = true,
+    -- Also remember to tell it which files it actually works with!
+    filetypes = { 'cds' },
+    root_dir = util.root_pattern('.git', 'package.json'),
+    settings = {},
   },
 }

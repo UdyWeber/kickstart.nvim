@@ -28,6 +28,50 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
+    dap.adapters.python = {
+      type = 'executable',
+      command = 'python',
+      args = { '-m', 'debugpy.adapter' },
+    }
+
+    dap.configurations.python = {
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Lauch file',
+        program = '${file}',
+        console = 'integratedTerminal',
+        pythonPath = function()
+          -- Use the system Python or virtual environment
+          local venv_path = os.getenv 'VIRTUAL_ENV'
+          if venv_path then
+            return venv_path .. '/bin/python'
+          end
+          return 'python' -- Fallback to system Python
+        end,
+      },
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Debug CLI with arguments',
+
+        program = '${workspaceFolder}', -- The entry point script of your CLI app
+        args = function()
+          -- Prompt the user for arguments
+          local input = vim.fn.input 'Enter arguments: '
+          return vim.split(input, ' ', { trimempty = true })
+        end,
+        console = 'integratedTerminal', -- Allows interactive CLI inputs
+        pythonPath = function()
+          local venv_path = os.getenv 'VIRTUAL_ENV'
+          if venv_path then
+            return venv_path .. '/bin/python'
+          end
+          return 'python'
+        end,
+      },
+    }
+
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
@@ -42,6 +86,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'debugpy',
       },
     }
 

@@ -198,7 +198,7 @@ end
 
 -- Jaw Keymaps
 vim.keymap.set('n', 'tt', OpenTerminal, { desc = 'Opens terminal on new window at the bottom' })
-
+vim.keymap.set('n', 'tx', ':Rest run', { desc = 'Run rest client in current buffer' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -723,6 +723,13 @@ require('lazy').setup({
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
+      cmp.setup.filetype({ 'sql' }, {
+        sources = {
+          { name = 'vim-dadbod-completion' },
+          { name = 'buffer' },
+        },
+      })
+
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -899,8 +906,8 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
